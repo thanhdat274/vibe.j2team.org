@@ -26,7 +26,7 @@ pnpm dev
 2. **Luôn có link về trang chủ** — mỗi trang con phải có link quay lại trang chủ
 3. **Ngôn ngữ: tiếng Việt (ưu tiên) hoặc tiếng Anh**
 4. **Không trùng ứng dụng con đã có** — kiểm tra danh sách trang trước khi tạo mới
-5. **Mỗi trang con hoạt động độc lập** — không sửa file dùng chung ngoài `router/index.ts` và `HomePage.vue`
+5. **Mỗi trang con hoạt động độc lập** — không sửa file dùng chung ngoài `src/data/pages.ts`
 6. **Responsive** — trang phải hiển thị tốt trên mobile
 7. **Không thêm dependency mới** trừ khi thật sự cần và được approve
 8. **Ghi rõ tên tác giả** trong mảng `pages` ở `src/data/pages.ts`
@@ -36,9 +36,8 @@ pnpm dev
 1. Fork repo và clone về máy
 2. Tạo branch mới từ `main` (ví dụ: `git checkout -b feat/tên-trang`)
 3. Tạo thư mục mới trong `src/views/<tên-trang>/` với file `index.vue`
-4. Thêm route trong `src/router/index.ts`
-5. Thêm link trang của bạn vào mảng `pages` trong `src/data/pages.ts`
-6. Tạo Pull Request và chờ merge!
+4. Thêm thông tin trang vào mảng `pages` trong `src/data/pages.ts` (route sẽ được tự động tạo)
+5. Tạo Pull Request và chờ merge!
 
 Xem trang mẫu: [`src/views/hello-world/index.vue`](src/views/hello-world/index.vue)
 
