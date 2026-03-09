@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, onUnmounted, type Directive } from 'vue'
+import { ref, computed, onUnmounted, type Directive } from 'vue'
+import { useEventListener } from '@vueuse/core'
 import { RouterLink, useRouter } from 'vue-router'
 import { Icon } from '@iconify/vue'
 import { pages } from '@/data/pages-loader'
@@ -133,8 +134,7 @@ function handleKeydown(e: KeyboardEvent) {
   }
 }
 
-onMounted(() => document.addEventListener('keydown', handleKeydown))
-onUnmounted(() => document.removeEventListener('keydown', handleKeydown))
+useEventListener(document, 'keydown', handleKeydown)
 </script>
 
 <template>
